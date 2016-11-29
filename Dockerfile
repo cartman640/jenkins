@@ -8,5 +8,7 @@ RUN apk add --update build-base python-dev python py-pip libffi-dev openssl-dev 
 
 ADD ["drunner", "/drunner"]
 
+RUN adduser jenkins docker
+
 # lock in druser.
 USER jenkins
