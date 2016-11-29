@@ -6,6 +6,7 @@ function start()
   result=drun("docker", "run", "-d", "-p", "8081:8080", "-p", "50000:50000",
     "--name", "drunner-${SERVICENAME}", "--restart=always", 
     "-v", "/etc/timezone:/etc/timezone:ro",
+    "-v", "/var/run/docker.sock:/var/run/docker.sock",
     "-v", "drunner-${SERVICENAME}-data:/var/jenkins_home",
     "${IMAGENAME}")
 
